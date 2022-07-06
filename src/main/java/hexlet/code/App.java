@@ -11,16 +11,17 @@ import java.util.concurrent.Callable;
 
 class App implements Callable<Integer> {
 
-    @Parameters(description = "path to first file")
+    //@Parameters(description = "path to first file")
     private String  filepath1;
 
-    @Parameters(description = "path to second file")
+    //@Parameters(description = "path to second file")
     private String  filepath2;
 
-    @Option(names = {"-f", "--format "}, defaultValue = "stylish", description = "output format [default: stylish]")
+    //@Option(names = {"-f", "--format "}, defaultValue = "stylish", description = "output format [default: stylish]")
     private String format;
 
-    public static void main(String... args) {
+    public static void main(String... args) throws Exception {
+        Differ.generate();
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }
