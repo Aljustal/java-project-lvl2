@@ -4,7 +4,13 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.List;
+import java.util.Collections;
+import java.util.LinkedHashMap;
 
 public class Differ {
 
@@ -22,10 +28,6 @@ public class Differ {
         Collections.sort(sortedUniqKeys);
 
         LinkedHashMap<String, Object> resultMap = new LinkedHashMap<>();
-
-        for (var e: sortedUniqKeys) {
-            System.out.println(e);
-        }
 
         for (var el: sortedUniqKeys) {
             var map1Val = map1.getOrDefault(el, null);
