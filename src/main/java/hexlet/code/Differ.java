@@ -14,11 +14,12 @@ import java.util.LinkedHashMap;
 
 public class Differ {
 
-    public static void generate() throws Exception {
+    public static String generate(String filepath1, String filepath2) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
 
-        Map<String, Object> map1 = mapper.readValue(Paths.get("src/main/json/file1.json").toFile(), Map.class);
-        Map<String, Object> map2 = mapper.readValue(new File("src/main/json/file2.json"), Map.class);
+        Map<String, Object> map1 = mapper.readValue(Paths.get(filepath1).toFile(), Map.class);
+        Map<String, Object> map2 = mapper.readValue(new File(filepath2), Map.class);
+
 
         Set<String> uniqKeys = new HashSet<>();
         uniqKeys.addAll(map1.keySet());
@@ -47,6 +48,6 @@ public class Differ {
 
         String jsonAsString = mapper.writeValueAsString(resultMap);
 
-        System.out.println(jsonAsString);
+        return jsonAsString;
     }
 }

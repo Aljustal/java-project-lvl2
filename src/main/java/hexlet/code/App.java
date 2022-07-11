@@ -19,7 +19,10 @@ class App implements Callable<Integer> {
     private String format;
 
     public static void main(String... args) throws Exception {
-        Differ.generate();
+
+        String filepath1 = ("src/main/json/file1.json");
+        String filepath2 = ("src/main/json/file2.json");
+        Differ.generate(filepath1, filepath2);
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }
