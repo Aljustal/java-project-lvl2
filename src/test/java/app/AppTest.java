@@ -16,7 +16,9 @@ public class AppTest {
         String filepath1 = ("src/test/resources/file1.json");
         String filepath2 = ("src/test/resources/file2.json");
         String expectedJson = ("src/test/resources/expectedJson.json");
-        String actual = "{\"- follow\":false,\"host\":\"hexlet.io\",\"- proxy\":\"123.234.53.22\",\"- timeout\":50,\"+ timeout\":20,\"+ verbose\":true}";
+        String actual = "{\"- follow\":false,\"host\":\"hexlet.io\","
+                + "\"- proxy\":\"123.234.53.22\",\"- timeout\":50,"
+                + "\"+ timeout\":20,\"+ verbose\":true}";
 
         String expectedString = Files.readString(Paths.get(expectedJson));
 
@@ -24,7 +26,6 @@ public class AppTest {
 
         ObjectMapper mapper = new ObjectMapper();
         String jsonAsString = mapper.writeValueAsString(expectedString);
-
         assertThat(result).isEqualTo(actual);
     }
 
