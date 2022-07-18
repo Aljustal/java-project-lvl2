@@ -1,7 +1,5 @@
 package app;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import hexlet.code.Differ;
 import org.junit.jupiter.api.Test;
 import static org.assertj.core.api.Assertions.assertThat;
