@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="app.AppTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-07-18T13:35:49" hostname="DESKTOP-I5GSO6T" time="0.429">
+<testsuite name="app.AppTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-07-18T14:57:27" hostname="DESKTOP-I5GSO6T" time="0.405">
   <properties/>
-  <testcase name="testGenDiffYML()" classname="app.AppTest" time="0.429"/>
+  <testcase name="testGenDiffJSON()" classname="app.AppTest" time="0.37"/>
+  <testcase name="testGenDiffYML()" classname="app.AppTest" time="0.034"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

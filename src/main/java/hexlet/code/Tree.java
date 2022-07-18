@@ -15,11 +15,11 @@ public class Tree {
     private final Object startingValue;
     private final Object finalValue;
 
-    public Tree(String typeOfChange, String key, Object startingValue, Object finalValue) {
-        this.typeOfChange = typeOfChange;
-        this.key = key;
-        this.startingValue = startingValue;
-        this.finalValue = finalValue;
+    public Tree(String type, String thisKey, Object sValue, Object fValue) {
+        this.typeOfChange = type;
+        this.key = thisKey;
+        this.startingValue = sValue;
+        this.finalValue = fValue;
     }
 
     public final String getTypeOfChange() {
