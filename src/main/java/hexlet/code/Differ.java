@@ -44,7 +44,7 @@ public class Differ {
 
         String jsonAsString = Parser.prettyPrinter(resultMap);
 
-        return jsonAsString.replace("\"", "").replace(" :",":");
+        return jsonAsString.replace("\"", "").replace(" :", ":");
     }
     private static String getStringFromFile(String filepath) throws IOException {
         return new String(Files.readAllBytes(Paths.get(filepath)));

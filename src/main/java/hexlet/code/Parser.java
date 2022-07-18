@@ -6,7 +6,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.Map;
+import java.util.LinkedHashMap;
 
 public class Parser {
     public static Map<String, Object> getData(String stringFromFile, String filepath) throws IOException {
