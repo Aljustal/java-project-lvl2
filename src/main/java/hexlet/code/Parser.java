@@ -20,8 +20,4 @@ public class Parser {
         return objectMapper.readValue(stringFromFile, new TypeReference<>() {
         });
     }
-    public static String prettyPrinter(LinkedHashMap<String, Object> map) throws JsonProcessingException {
-        ObjectMapper objectMapper = new ObjectMapper();
-        return objectMapper.writerWithDefaultPrettyPrinter().writeValueAsString(map);
-    }
 }

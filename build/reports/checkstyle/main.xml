@@ -4,6 +4,16 @@
 </file>
 <file name="/home/orbitfsk/app/src/main/java/hexlet/code/Differ.java">
 </file>
+<file name="/home/orbitfsk/app/src/main/java/hexlet/code/Formatter.java">
+</file>
 <file name="/home/orbitfsk/app/src/main/java/hexlet/code/Parser.java">
+</file>
+<file name="/home/orbitfsk/app/src/main/java/hexlet/code/Tree.java">
+<error line="18" column="24" severity="error" message="&apos;typeOfChange&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="18" column="45" severity="error" message="&apos;key&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="18" column="57" severity="error" message="&apos;startingValue&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+<error line="18" column="79" severity="error" message="&apos;finalValue&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
+</file>
+<file name="/home/orbitfsk/app/src/main/java/hexlet/code/formatters/Stylish.java">
 </file>
 </checkstyle>
