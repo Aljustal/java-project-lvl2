@@ -25,4 +25,7 @@ build:
 report:
 	./gradlew jacocoTestReport
 
+h:
+	./build/install/app/bin/app -h
+
 .PHONY: build

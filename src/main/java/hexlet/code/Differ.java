@@ -1,8 +1,7 @@
 package hexlet.code;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,11 +14,8 @@ import java.util.LinkedHashMap;
 public class Differ {
 
     public static String generate(String filepath1, String filepath2) throws Exception {
-        ObjectMapper mapper = new ObjectMapper();
-
-        Map<String, Object> map1 = mapper.readValue(Paths.get(filepath1).toFile(), Map.class);
-        Map<String, Object> map2 = mapper.readValue(new File(filepath2), Map.class);
-
+        Map<String, Object> map1 = Parser.getData(getStringFromFile(filepath1), filepath1);
+        Map<String, Object> map2 = Parser.getData(getStringFromFile(filepath2), filepath2);
 
         Set<String> uniqKeys = new HashSet<>();
         uniqKeys.addAll(map1.keySet());
@@ -37,7 +33,7 @@ public class Differ {
             if (map1Val == null) {
                 resultMap.put("+ " + el, map2Val);
             } else if (map1Val.equals(map2Val)) {
-                resultMap.put(el.toString(), map1Val);
+                resultMap.put("  " + el.toString(), map1Val);
             } else if (map2Val == null) {
                 resultMap.put("- " + el, map1Val);
             } else {
@@ -46,8 +42,11 @@ public class Differ {
             }
         }
 
-        String jsonAsString = mapper.writeValueAsString(resultMap);
+        String jsonAsString = Parser.prettyPrinter(resultMap);
 
-        return jsonAsString;
+        return jsonAsString.replace("\"", "").replace(" :",":");
+    }
+    private static String getStringFromFile(String filepath) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(filepath)));
     }
 }
