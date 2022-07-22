@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Plain {
 
-    public static String formatter(List<Tree> diffTree) {
+    public static String getPlainFormatter(List<Tree> diffTree) {
         StringBuilder diffBuilder = new StringBuilder();
 
         for (Tree pair : diffTree) {

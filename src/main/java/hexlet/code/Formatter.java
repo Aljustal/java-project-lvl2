@@ -9,11 +9,13 @@ import java.util.List;
 
 public class Formatter {
     public static String format(List<Tree> diffTree, String formatName) throws JsonProcessingException {
-        if (formatName.equals("plain")) {
-            return Plain.formatter(diffTree);
-        } else if (formatName.equals("json")) {
-            return Json.formatter(diffTree);
+        switch (formatName) {
+            case "plain":
+                return Plain.getPlainFormatter(diffTree);
+            case "json":
+                return Json.getJsonFormatter(diffTree);
+            default:
+                return Stylish.getStylishFormatter(diffTree);
         }
-        return Stylish.formatter(diffTree);
     }
 }

@@ -7,7 +7,7 @@ import hexlet.code.Tree;
 import java.util.List;
 
 public class Json {
-    public static String formatter(List<Tree> diffTree) throws JsonProcessingException {
+    public static String getJsonFormatter(List<Tree> diffTree) throws JsonProcessingException {
         return new ObjectMapper().writeValueAsString(diffTree);
     }
 }

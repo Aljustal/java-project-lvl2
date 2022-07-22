@@ -7,7 +7,7 @@ import java.util.List;
 public class Stylish {
     private static final String WSPACE = " ";
 
-    public static String formatter(List<Tree> diffTree) {
+    public static String getStylishFormatter(List<Tree> diffTree) {
         StringBuilder diffBuilder = new StringBuilder("{\n");
 
         for (Tree pair : diffTree) {
