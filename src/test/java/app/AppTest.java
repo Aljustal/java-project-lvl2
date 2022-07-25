@@ -26,19 +26,12 @@ public class AppTest {
         String filepath1 = ("src/test/resources/file1.yml");
         String filepath2 = ("src/test/resources/file2.yml");
         String stylishYML = ("src/test/resources/fixtures/stylishYML");
-        String ymlPlainFormat = ("src/test/resources/fixtures/yml");
 
         String expectedString = Files.readString(
                 Paths.get(stylishYML));
 
-        String expectedStringPlainFormat = Files.readString(
-                Paths.get(ymlPlainFormat));
-
         String actual = Differ.generate(filepath1, filepath2);
         assertThat(actual).isEqualTo(expectedString);
-
-        String actualPlainFormat = Differ.generate(filepath1, filepath2, "plain");
-        assertThat(actualPlainFormat).isEqualTo(expectedStringPlainFormat);
     }
 
     @Test
@@ -50,6 +43,19 @@ public class AppTest {
 
         String expectedString = Files.readString(
                 Paths.get(plain));
+
+        String actual = Differ.generate(filepath1, filepath2, "plain");
+        assertThat(actual).isEqualTo(expectedString);
+    }
+    @Test
+    void testDiffYmlPlainFormat() throws Exception {
+
+        String filepath1 = ("src/test/resources/file1.yml");
+        String filepath2 = ("src/test/resources/file2.yml");
+        String ymlPlainFormat = ("src/test/resources/fixtures/yml");
+
+        String expectedString = Files.readString(
+                Paths.get(ymlPlainFormat));
 
         String actual = Differ.generate(filepath1, filepath2, "plain");
         assertThat(actual).isEqualTo(expectedString);
